@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <title>Personal Library</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #fff;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #welcome-page {
+        display: flex;
+        height: 100vh;
+        box-sizing: border-box;
+        min-height: fit-content;
+      }
+
+      h1 {
+        font-size: 70px;
+      }
+
+      .start-button {
+        position: relative;
+      }
+      button {
+        color: #fff;
+        background-color: #0c2a68;
+        border: solid 1px #0c2a68;
+        border-radius: 30px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        padding: 20px 30px;
+        transition: all 300ms ease-in;
+      }
+      button:hover {
+        background-color: #fff;
+        border: solid 1px #0c2a68;
+        color: #0c2a68;
+      }
+
+      #form-section {
+        max-width: 1200px;
+        background-color: #fff;
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-around;
+        margin: 20px auto;
+        box-shadow: rgb(0, 0, 0, 0.6);
+      }
+
+      /*#left-side {
+    width: 90%;
+    background-color: blue;
+}
+#right-side {
+    flex-grow: 1;
+    background-color: blueviolet;
+}*/
+
+      img {
+        height: 100%;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+
+      form {
+        padding: 20px 40px;
+        width: 80%;
+      }
+
+      h2 {
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      label {
+        display: inline-block;
+      }
+
+      input {
+        width: 100%;
+        border: solid 1px #ccc;
+        border-radius: 30px;
+        margin: 10px 0;
+        padding: 10px 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10px;
+      }
+
+      #add,
+      #clear {
+        width: 150px;
+        height: 45px;
+        background-color: #fff;
+        border: solid 1px #0c2a68;
+        color: #0c2a68;
+        transition: all 300ms ease-in;
+      }
+
+      #add:hover,
+      #clear:hover {
+        color: #fff;
+        background-color: #0c2a68;
+        border: solid 1px #0c2a68;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="welcome-page">
+      <div class="heading-img">
+        <img src="bigbook.jpg" alt="a big book" />
+      </div>
+      <div class="heading">
+        <h1>
+          Welcome to Your Personal Library <i class="ri-book-shelf-line"></i>
+        </h1>
+        <div class="start-button">
+          <a href="#form-section"><button>Let's Begin!</button></a>
+        </div>
+      </div>
+    </section>
+    <section id="form-section">
+      <div id="left-side">
+        <form action="/addbook" method="POST">
+          <h2>Add a Book to Your Library</h2>
+
+          <label for="title">Title:</label>
+          <input type="text" name="title" id="title" required />
+
+          <label for="author">Author:</label>
+          <input type="text" name="author" id="author" required />
+
+          <label for="genre">Genre:</label>
+          <input type="text" name="genre" id="genre" required />
+
+          <label for="rating">Rating (out of 10):</label>
+          <input
+            type="number"
+            name="rating"
+            id="rating"
+            min="1"
+            max="10"
+            required
+          />
+
+          <div class="buttons">
+            <input type="submit" value="Add" id="add" />
+            <input type="reset" value="Clear" id="clear" />
+          </div>
+        </form>
+      </div>
+      <div id="right-side">
+        <img src="library.png" alt="bookshelf" />
+      </div>
+    </section>
+  </body>
+</html>
